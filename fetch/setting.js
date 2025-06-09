@@ -62,7 +62,13 @@
       this.main_js = new Main.Main();
     }
     async Set_Cloud_Var(args, util) {
-      let project_id = args.project_id;
-      this.main_js.
-      
-    
+      await this.main_js.set_cloud_var(args, util);
+    }
+    async Get_Cloud_Logs(args, util) {
+      await this.main_js.get_cloud_logs(args, util);
+    }
+  }
+  
+  Scratch.extensions.register(new MyExtension());
+
+})(Scratch);
