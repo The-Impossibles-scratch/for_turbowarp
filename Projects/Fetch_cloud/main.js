@@ -68,7 +68,7 @@
     }
 
     async fetch_cloud(args) {
-      return 'テストのreturn'
+      return `テストのreturn : JSON.stringify(${args})`
     }
   };
 
