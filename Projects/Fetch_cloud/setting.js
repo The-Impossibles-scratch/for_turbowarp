@@ -6,7 +6,7 @@
     id: id,
     name: name,
     
-    color1: '#fff705',
+    color1: '#a89e32',
     color2: '#ffffff',
     color3: '#ffffff',
 
