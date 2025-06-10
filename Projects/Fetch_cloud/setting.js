@@ -23,19 +23,19 @@
           },
           
           get_options: {
-            type: Scratch.ArgumentType.DROWPDOWN,
+            type: Scratch.ArgumentType.DROPDOWN,
             menu: 'get_options',
             defaultValue: 'Logs'
           },
           
           download_options: {
-            type: Scratch.ArgumentType.DROWPDOWN,
+            type: Scratch.ArgumentType.DROPDOWN,
             menu: 'download_options',
             defaultValue: 'False'
           },
           
           filetype_options: {
-            type: Scratch.ArgumentType.DROWPDOWN,
+            type: Scratch.ArgumentType.DROPDOWN,
             menu: 'filetype_options',
             defaultValue: 'Json'
           }
@@ -79,7 +79,7 @@
     }
   };
 
-  Scratch.extensions.register(new MyExtension());
+  Scratch.extensions.register(new fetch_cloud());
   
 })(Scratch);
     
