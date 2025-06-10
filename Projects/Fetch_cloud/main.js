@@ -68,10 +68,8 @@
     }
 
     async fetch_cloud(args) {
-      const QUERY = new Date().getTime();
-      const JS = await import(`https://corsproxy.io/?https://The-Impossibles-scratch/for_turbowarp/Projects/Fetch_cloud/JS.js`);
-      this.js = new JS.Main()
-      return await this.js.fetch_cloud(args);
+      const args_json = JSON.stringify(args);
+      return args_json
     }
   };
 
