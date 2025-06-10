@@ -68,7 +68,7 @@
     }
 
     async fetch_cloud(args) {
-      return `テストのreturn ${args}`
+      return `テストのreturn ${args.filetype_options.value}`
     }
   };
 
