@@ -1,2 +1,6 @@
 export class Main {
-  fetch_cloud
+  async fetch_cloud(args) {
+    const args = JSON.stringify(args);
+    return `Test Returns : ${args}`;
+  }
+}
