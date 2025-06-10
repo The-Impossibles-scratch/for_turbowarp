@@ -1,5 +1,5 @@
 ((Scratch) => {
-  const id = 'Fetch_Cloud';
+  const id = 'fetchcloud';
   const name = 'Fettch Scratch Cloud';
   
   const Infos = {
