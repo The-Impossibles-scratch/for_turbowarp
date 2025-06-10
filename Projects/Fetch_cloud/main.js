@@ -62,20 +62,13 @@
     },
   };
 
-  const HOST = 'https://the-impossibles-scratch.github.io';
-  const DIRECTORY = 'for_turbowarp/Projects/Fetch_cloud';
-  const FILE = 'main.js';
-
   class fetch_cloud {
     getInfo() {
       return Infos;
     }
 
     async fetch_cloud(args) {
-      const QUERY = new Date().getTime();
-      const JS = await import(`${HOST}/${DIRECTORY}/${FILE}?_t=${QUERY}`) //reference : https://github.com/amami-harhid/turbowarpExtensions/blob/main/08_extension/Extension.js
-      this.JS = new JS.Main();
-      return await this.JS.fetch_cloud(args);
+      return `テストのreturn ${args}`
     }
   };
 
