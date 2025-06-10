@@ -6,9 +6,9 @@
     id: id,
     name: name,
     
-    color1: '',
-    color2: '',
-    color3: '',
+    color1: '#fff705',
+    color2: '#ffffff',
+    color3: '#ffffff',
 
     blocks: [
       {
