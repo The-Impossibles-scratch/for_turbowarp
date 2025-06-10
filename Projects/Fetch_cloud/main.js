@@ -68,11 +68,13 @@
     }
 
     async fetch_cloud(args) {
-      return 'テストのreturn : ' + JSON.stringify(args);
+      const QUERY = new Date().getTime();
+      const JS = await import(`https://corsproxy.io/?https://The-Impossibles-scratch/for_turbowarp/Projects/Fetch_cloud/JS.js`);
+      this.js = new JS.Main()
+      return await this.js.fetch_cloud(args);
     }
   };
 
   Scratch.extensions.register(new fetch_cloud());
   
 })(Scratch);
-    
