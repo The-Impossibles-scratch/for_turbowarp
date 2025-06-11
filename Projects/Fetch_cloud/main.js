@@ -67,29 +67,28 @@
       return Infos;
     }
 
-    get_cloud_logs = async (args) => {
+    async get_cloud_logs(args) {
       return 'Test : Type = Logs'
     }
 
-    get_cloud_var = async (args) => {
+    async get_cloud_var(args) {
       return 'Test : Type = Var'
     }
 
-    get_all_cloud_vars = async (args) => {
+    async get_all_cloud_vars(args) {
       return 'Test : Type = All Vars'
     }
 
     async fetch_cloud(args) {
       const args_json = JSON.stringify(args);
       if (args.get_options === 'Logs') {
-        return await get_cloud_logs(args)
+        return await this.get_cloud_logs(args)
       } else if (args.get_options === 'Var') {
-        return await get_cloud_var(args)
+        return await this.get_cloud_var(args)
       } else if (args.get_options === 'All Vars') {
-        return await get_all_cloud_vars(args)
+        return await this.get_all_cloud_vars(args)
       }
     };
-
   };
 
   Scratch.extensions.register(new fetch_cloud());
