@@ -68,25 +68,31 @@
     }
 
     async get_cloud_logs(args) {
-      return 'Test : Type = Logs'
+      const ulr = ``;
+      
+      return
     }
 
     async get_cloud_var(args) {
-      return 'Test : Type = Var'
+      const ulr = ``;
+      
+      return
     }
 
     async get_all_cloud_vars(args) {
-      return 'Test : Type = All Vars'
+      const ulr = ``;
+      
+      return
     }
 
     async fetch_cloud(args) {
       const args_json = JSON.stringify(args);
       if (args.get_options === 'Logs') {
-        return await this.get_cloud_logs(args)
+        return await this.get_cloud_logs(args_json)
       } else if (args.get_options === 'Var') {
-        return await this.get_cloud_var(args)
+        return await this.get_cloud_var(args_json)
       } else if (args.get_options === 'All Vars') {
-        return await this.get_all_cloud_vars(args)
+        return await this.get_all_cloud_vars(args_json)
       }
     };
   };
