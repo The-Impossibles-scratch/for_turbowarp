@@ -82,15 +82,15 @@
       
       try {
         const fetch_res = await fetch(url);
+        const cloud_log_json = await fetch_res.json();
+        
+        if (cloud_log_json.length == 0) return 'There seems to be no Cloud Data activity on this project';
+        
+        return cloud_log_json
       } catch (e) {
         return `Error : ${e}`
       }
-      
-      const cloud_log_json = await fetch_res.json()
-      if (cloud_log_json.length == 0) return 'There seems to be no Cloud Data activity on this project…'
-      
-      return cloud_log_json
-    }
+    };
 
     async get_cloud_var(args) {
       const ulr = ``;
@@ -105,13 +105,12 @@
     }
 
     async fetch_cloud(args) {
-      const args_json = JSON.stringify(args);
       if (args.get_options === 'Logs') {
-        return await this.get_cloud_logs(args_json)
+        return await this.get_cloud_logs(args)
       } else if (args.get_options === 'Var') {
-        return await this.get_cloud_var(args_json)
+        return await this.get_cloud_var(args)
       } else if (args.get_options === 'All Vars') {
-        return await this.get_all_cloud_vars(args_json)
+        return await this.get_all_cloud_vars(args)
       }
     };
   };
