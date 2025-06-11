@@ -79,16 +79,16 @@
     };
 
     get_cloud_logs = async (args) => {
-      
-    };
+      return 'Test : Type = Logs'
+    }
 
     get_cloud_var = async (args) => {
-      
-    };
+      return 'Test : Type = Var'
+    }
 
     get_all_cloud_vars = async (args) => {
-      
-    }; 
+      return 'Test : Type = All Vars'
+    }
   };
 
   Scratch.extensions.register(new fetch_cloud());
