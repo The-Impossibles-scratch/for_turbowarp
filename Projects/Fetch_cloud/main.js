@@ -86,7 +86,7 @@
         
         if (cloud_log_json.length == 0) return 'There seems to be no Cloud Data activity on this project';
         
-        return JSON.stringify(cloud_log_json)
+        return JSON.stringify(cloud_log_json[0], null, 2);
       } catch (e) {
         return `Error : ${e}`
       }
