@@ -14,7 +14,7 @@
       {
         opcode: 'fetch_cloud',
         blockType: Scratch.BlockType.REPORTER,
-        text: 'GET | Project Id : [project_id] | Get Options : [get_options] | Download? : [download_options] | File Type : [filetype_options]',
+        text: 'GET | Project Id : [project_id] | Get Options : [get_options] | Limit : [limit] | Offset : [offset] | Download? : [download_options] | File Type : [filetype_options]',
         
         arguments: {
           project_id: {
@@ -27,7 +27,17 @@
             menu: 'get_options',
             defaultValue: 'Logs'
           },
-          
+
+          limit: {
+            type: Scratch.ArgumentType.NUMBER,
+            defaultValue: 1000
+          },
+
+          offset: {
+            type: Scratch.ArgumentType.NUMBER,
+            defaultValue: 0
+          },
+        
           download_options: {
             type: Scratch.ArgumentType.DROPDOWN,
             menu: 'download_options',
@@ -68,9 +78,18 @@
     }
 
     async get_cloud_logs(args) {
-      const ulr = ``;
+      const url = `https://clouddata.scratch.mit.edu/logs?projectid=${args.project_id}&limit=${args.limit}&offset=${args.offset}`;
       
-      return
+      try {
+        const fetch_res = await fetch(url);
+      } catch (e) {
+        return `Error : ${e}`
+      }
+      
+      const cloud_log_json = await fetch_res.json()
+      if (cloud_log_json.length == 0) return 'There seems to be no Cloud Data activity on this project…'
+      
+      return cloud_log_json
     }
 
     async get_cloud_var(args) {
