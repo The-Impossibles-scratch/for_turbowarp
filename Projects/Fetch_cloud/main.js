@@ -78,15 +78,15 @@
       }
     };
 
-    async get_cloud_logs = (args) => {
+    get_cloud_logs = async (args) => {
       
     };
 
-    async get_cloud_var = (args) => {
+    get_cloud_var = async (args) => {
       
     };
 
-    async get_all_cloud_vars = (args) => {
+    get_all_cloud_vars = async (args) => {
       
     }; 
   };
