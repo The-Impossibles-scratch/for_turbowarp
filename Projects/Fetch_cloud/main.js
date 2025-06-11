@@ -69,8 +69,26 @@
 
     async fetch_cloud(args) {
       const args_json = JSON.stringify(args);
-      return args_json
-    }
+      if (args.get_options === 'Logs') {
+        return await get_cloud_logs(args)
+      } else if (args.get_options === 'Var') {
+        return await get_cloud_var(args)
+      } else if (args.get_options === 'All Vars') {
+        return await get_all_cloud_vars(args)
+      }
+    };
+
+    async get_cloud_logs = (args) => {
+      
+    };
+
+    async get_cloud_var = (args) => {
+      
+    };
+
+    async get_all_cloud_vars = (args) => {
+      
+    }; 
   };
 
   Scratch.extensions.register(new fetch_cloud());
